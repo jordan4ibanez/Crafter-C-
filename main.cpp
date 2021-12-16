@@ -1,6 +1,7 @@
 #include <iostream>
 #include <GLFW/glfw3.h>
 #include "src/mesh.h"
+#include "src/debug/log.h"
 
 _Float32 color = 0.0;
 
@@ -36,7 +37,7 @@ int main(void)
 
         color = MyDebugTest(color);
 
-        std::cout << "color has been changed to: " << color << std::endl;
+        log(std::to_string(color));
 
         /* Render here */
         glClear(GL_COLOR_BUFFER_BIT);

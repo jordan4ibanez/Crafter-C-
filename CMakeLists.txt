@@ -10,6 +10,8 @@ main.cpp #main
 
 #everything here on out is manual additions
 src/mesh.cpp
+
+src/debug/log.cpp
 )
 #end manual additions
 
