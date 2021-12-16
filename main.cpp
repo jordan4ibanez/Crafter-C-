@@ -3,8 +3,6 @@
 #include "src/mesh.h"
 #include "src/debug/log.h"
 
-_Float32 color(0.0);
-
 int main(void)
 {
     GLFWwindow* window;
@@ -31,7 +29,7 @@ int main(void)
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window)) {
 
-        glClearColor(color,color,color,1);
+        glClearColor(getColor(),getColor(),getColor(),1);
 
         /* Render here */
         glClear(GL_COLOR_BUFFER_BIT);
