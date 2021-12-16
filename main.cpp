@@ -33,12 +33,6 @@ int main(void)
 
         glClearColor(color,color,color,1);
 
-        color = MyDebugTest(color);
-
-        logHeader("Color Debug");
-        log(std::to_string(color));
-        logFooter();
-
         /* Render here */
         glClear(GL_COLOR_BUFFER_BIT);
 
