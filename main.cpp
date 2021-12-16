@@ -1,6 +1,6 @@
 #include <iostream>
 #include <GLFW/glfw3.h>
-#include <source/mesh.h>
+#include "src/mesh.h"
 
 int main(void)
 {
@@ -31,6 +31,7 @@ int main(void)
         glClearColor(0.1,0.1,0.8,1);
 
 
+        MyDebugTest();
 
 
 
