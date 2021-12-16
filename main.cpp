@@ -2,6 +2,8 @@
 #include <GLFW/glfw3.h>
 #include "src/mesh.h"
 
+_Float32 color = 0.0;
+
 int main(void)
 {
     GLFWwindow* window;
@@ -28,12 +30,13 @@ int main(void)
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window)) {
 
-        glClearColor(0.1,0.1,0.8,1);
+        glClearColor(color,color,color,1);
 
+        std::cout << "------------------" << std::endl;
 
-        MyDebugTest();
+        color = MyDebugTest(color);
 
-
+        std::cout << "color has been changed to: " << color << std::endl;
 
         /* Render here */
         glClear(GL_COLOR_BUFFER_BIT);
