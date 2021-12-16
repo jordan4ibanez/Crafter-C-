@@ -1,27 +1,6 @@
 #include <iostream>
 #include <GLFW/glfw3.h>
-
-_Float64 test = 0.0;
-
-bool up = true;
-
-void testGlClearColor(){
-
-    if (up){
-        test += 0.01;
-        if (test >= 1){
-            up = false;
-        }
-    } else {
-        test -= 0.01;
-        if (test <= 0){
-            up = true;
-        }
-    }
-
-    std::cout << test << std::endl;
-
-}
+#include <source/mesh.h>
 
 int main(void)
 {
@@ -47,11 +26,13 @@ int main(void)
     glfwMakeContextCurrent(window);
 
     /* Loop until the user closes the window */
-    while (!glfwWindowShouldClose(window)) {   
-        
-        testGlClearColor();
+    while (!glfwWindowShouldClose(window)) {
 
-        glClearColor(test,test,test,1);
+        glClearColor(0.1,0.1,0.8,1);
+
+
+
+
 
         /* Render here */
         glClear(GL_COLOR_BUFFER_BIT);
