@@ -4,7 +4,14 @@ project(Crafter VERSION 0.1.0)
 include(CTest)
 enable_testing()
 
-add_executable(Crafter main.cpp)
+#manual adding of cpp files to linkage
+add_executable(Crafter 
+main.cpp #main
+
+#everything here on out is manual additions
+src/mesh.cpp
+)
+#end manual additions
 
 #manual inclusion of /source/
 include_directories(${CMAKE_SOURCE_DIR})
