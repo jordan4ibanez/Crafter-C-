@@ -21,7 +21,7 @@ int main(void)
 
     if (!window) {
         glfwTerminate();
-        std::cout << "GL WINDOW WAS NOT ABLE TO BE CREATED!" << std::endl;
+        log("GL WINDOW WAS NOT ABLE TO BE CREATED!");
         return -1;
     }
 
