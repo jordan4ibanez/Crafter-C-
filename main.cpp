@@ -2,6 +2,7 @@
 #include <GLFW/glfw3.h>
 #include "src/mesh.h"
 #include "src/debug/log.h"
+#include <glm/vec3.hpp>
 
 int main(void)
 {
@@ -29,7 +30,11 @@ int main(void)
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window)) {
 
-        glClearColor(getColor(),getColor(),getColor(),1);
+        glClearColor(0.3,0.3,0.3,1);
+
+        //do not enable this if you are epileptic
+        //glm::vec3 color = myDebugTest();
+        //glClearColor(color.x,color.y,color.z,1);
 
         /* Render here */
         glClear(GL_COLOR_BUFFER_BIT);

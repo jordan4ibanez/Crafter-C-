@@ -1,6 +1,8 @@
 #pragma once
-//#include <iostream>
+#include <iostream>
+#include <tuple>
+#include <glm/vec3.hpp>
 
-_Float32 myDebugTest(_Float32 color);
+ glm::vec3 myDebugTest();
 
 _Float32 getColor();

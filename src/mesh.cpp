@@ -1,18 +1,31 @@
 #include <iostream>
 #include <random>
+#include "debug/log.h"
 #include "mesh.h"
+#include <glm/vec3.hpp>
+#include <tuple>
 
 //a magical immortal variable
 _Float32 color(0.3);
 
 //this doesn't do anything important at all, it was just to learn C++ with header files and cmake BOI
-_Float32 myDebugTest( _Float32 color){
+//do not enable this if you are epileptic also I don't know how to spell thank you
+ glm::vec3 myDebugTest(){
 
-    float r = static_cast <float> (rand()) / static_cast <float> (RAND_MAX);
+    glm::vec3 test(1,2,3);
 
-    color = r;
+    test.x = static_cast <float> (rand()) / static_cast <float> (RAND_MAX);
+    test.y = static_cast <float> (rand()) / static_cast <float> (RAND_MAX);
+    test.z = static_cast <float> (rand()) / static_cast <float> (RAND_MAX);
 
-    return (color);
+
+    //color = r;
+
+    log(std::to_string(test.x) + " " + std::to_string(test.y) + " " + std::to_string(test.z));
+
+    //apparently vec3 is automatically deleted?
+
+    return(test);
 }
 
 _Float32 getColor(){
