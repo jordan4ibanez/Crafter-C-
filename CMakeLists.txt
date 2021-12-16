@@ -27,11 +27,22 @@ include_directories(glfw-3.3.6/src)
 target_link_libraries(Crafter glfw ${GLFW_LIBRARIES})
 target_link_libraries(Crafter glfw ${OPENGL_glu_LIBRARY} ${GLFW_LIBRARIES})
 
+
+#glm directory management
+add_subdirectory(glm)
+include_directories(glm/glm)
+
+#glm linkages
+target_link_libraries(Crafter glm ${GLM_LIBRARIES})
+
+
 #manual inclusion of OpenGL
 find_package(OpenGL REQUIRED)
 
 #manual OpenGL linkage
 target_link_libraries(Crafter OpenGL::GL)
+
+set(OpenGL_GL_PREFERENCE GLVND)
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
