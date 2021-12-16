@@ -3,7 +3,7 @@
 #include "src/mesh.h"
 #include "src/debug/log.h"
 
-_Float32 color = 0.0;
+_Float32 color(0.0);
 
 int main(void)
 {
