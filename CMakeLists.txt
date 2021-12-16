@@ -6,6 +6,9 @@ enable_testing()
 
 add_executable(Crafter main.cpp)
 
+#manual inclusion of /source/
+include_directories(${CMAKE_SOURCE_DIR})
+
 #glfw directory management
 add_subdirectory(glfw-3.3.6)
 include_directories(glfw-3.3.6/include)
