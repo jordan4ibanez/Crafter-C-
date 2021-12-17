@@ -12,6 +12,7 @@ main.cpp #main
 src/debug/log.cpp
 src/mesh.cpp
 src/chunk.cpp
+src/deltaTime.cpp
 
 )
 #end manual additions
