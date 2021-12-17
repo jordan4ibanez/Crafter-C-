@@ -3,6 +3,7 @@
 #include "src/mesh.h"
 #include "src/debug/log.h"
 #include <glm/vec3.hpp>
+#include "src/chunk.h"
 
 int main(void)
 {
@@ -32,6 +33,7 @@ int main(void)
 
         glClearColor(0.3,0.3,0.3,1);
 
+        testMyChunk();
         //do not enable this if you are epileptic
         //glm::vec3 color = myDebugTest();
         //glClearColor(color.x,color.y,color.z,1);

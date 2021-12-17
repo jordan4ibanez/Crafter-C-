@@ -18,7 +18,6 @@ glm::vec3 myDebugTest(){
     test.y = static_cast <float> (rand()) / static_cast <float> (RAND_MAX);
     test.z = static_cast <float> (rand()) / static_cast <float> (RAND_MAX);
 
-
     //color = r;
 
     log(std::to_string(test.x) + " " + std::to_string(test.y) + " " + std::to_string(test.z));
