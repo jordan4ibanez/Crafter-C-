@@ -9,9 +9,10 @@ add_executable(Crafter
 main.cpp #main
 
 #everything here on out is manual additions
-src/mesh.cpp
-
 src/debug/log.cpp
+src/mesh.cpp
+src/chunk.cpp
+
 )
 #end manual additions
 
