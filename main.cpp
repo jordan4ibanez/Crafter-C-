@@ -55,6 +55,9 @@ int main(void)
     //3 triple buffered <- great on low end systems maybe?
     glfwSwapInterval(1);
 
+    //build the glsl shaders
+    compileShaders();
+
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window)) {
 
