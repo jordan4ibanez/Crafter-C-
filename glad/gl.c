@@ -3,6 +3,7 @@
 #include <string.h>
 #include "gl.h"
 #include "khrplatform.h"
+#include <dlfcn.h>
 
 #ifndef GLAD_IMPL_UTIL_C_
 #define GLAD_IMPL_UTIL_C_
