@@ -5,6 +5,7 @@
 #include "src/debug/log.h"
 #include <glm/vec3.hpp>
 #include "src/chunk.h"
+#include "src/deltaTime.h"
 
 
 int main(void)
@@ -56,15 +57,9 @@ int main(void)
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window)) {
 
-        glClearColor(0.3,0.3,0.3,1);
+        tickDelta();
 
-        //this is to be used as program delta time in the future
-        //it is a float -> assumed to be 64 bit
-        log(std::to_string(glfwGetTime()));
-        //this resets the timer to maintain float accuracy
-        //!!make sure to add this to a 64 or 128 bit float to get total uptime!!
-        glfwSetTime(0);
-        //end delta time
+        glClearColor(0.3,0.3,0.3,1);
 
         //testMyChunk();
         //do not enable this if you are epileptic
