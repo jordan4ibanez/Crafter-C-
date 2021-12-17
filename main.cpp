@@ -20,13 +20,19 @@ int main(void)
     /* Create a windowed mode window and its OpenGL context */
     window = glfwCreateWindow(640, 480, "Crafter?", NULL, NULL);
 
-    //test that this works on all OSes
+    //This is debug, basically sending the window pointer to null and crashing glfw.
+    //This is implemented to test the crashing on non-supported (outdated)
+    //graphics hardware on individual operating systems.
     //window = NULL;
 
     if (!window) {
         glfwTerminate();
+        logHeader("GLFW ERROR");
         log("GL WINDOW WAS NOT ABLE TO BE CREATED!");
-        return -1;
+        log("EXIT REASON:" + std::to_string(EXIT_FAILURE));
+        logFooter();
+        exit(EXIT_FAILURE);
+        return(EXIT_FAILURE);
     }
 
     /* Make the window's context current */
