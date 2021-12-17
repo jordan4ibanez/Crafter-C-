@@ -10,7 +10,7 @@ _Float32 color(0.3);
 
 //this doesn't do anything important at all, it was just to learn C++ with header files and cmake BOI
 //do not enable this if you are epileptic also I don't know how to spell thank you
- glm::vec3 myDebugTest(){
+glm::vec3 myDebugTest(){
 
     glm::vec3 test(1,2,3);
 
