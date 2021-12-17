@@ -6,7 +6,7 @@
 #include <glm/vec3.hpp>
 #include "src/chunk.h"
 #include "src/deltaTime.h"
-
+#include "src/shaderCode/shaderCode.h"
 
 int main(void)
 {
@@ -39,6 +39,7 @@ int main(void)
         log("GL WINDOW WAS NOT ABLE TO BE CREATED!");
         log("EXIT REASON:" + std::to_string(EXIT_FAILURE));
         logFooter();
+        glfwTerminate();
         exit(EXIT_FAILURE);
         return(EXIT_FAILURE);
     }
