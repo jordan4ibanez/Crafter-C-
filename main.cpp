@@ -59,8 +59,6 @@ int main(void)
 
         tickDelta();
 
-        log(std::to_string(getUptime()));
-
         glClearColor(0.3,0.3,0.3,1);
 
         //testMyChunk();

@@ -2,6 +2,13 @@
 #include <GLFW/glfw3.h>
 //#include "debug/log.h"
 
+/*
+Keep in mind, this is all working with REAL TIME, in a 64 bit float.
+This will give you REAL TIME second accuracy.
+1.0 = 1.0 seconds
+*/
+
+
 //immortal delta/uptime variables
 _Float64 deltaTime(0.0);
 //_Float128 will probably cause performance problems, probably don't need that much uptime precision in a game
