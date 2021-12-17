@@ -1,6 +1,6 @@
 #include <iostream>
 #include <GLFW/glfw3.h>
-#include "debug/log.h"
+//#include "debug/log.h"
 
 //immortal delta/uptime variables
 _Float64 deltaTime(0.0);
@@ -12,7 +12,7 @@ void tickDelta(){
     //it is a float -> assumed to be 64 bit but platform dependant, see https://www.glfw.org/docs/3.0/group__time.html
     deltaTime = glfwGetTime();
     //debug terminal logging
-    log(std::to_string(deltaTime));
+    //log(std::to_string(deltaTime));
     //tick up the uptime, in case this is needed for some reason
     upTime += deltaTime;
     //this resets the timer to maintain float accuracy
@@ -22,4 +22,9 @@ void tickDelta(){
 //easy way to get the delta time
 _Float64 getDelta(){
     return(deltaTime);
+}
+
+//easy way to get the uptime (in seconds)
+_Float64 getUptime(){
+    return(upTime);
 }

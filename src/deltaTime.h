@@ -6,3 +6,5 @@
 void tickDelta();
 
 _Float64 getDelta();
+
+_Float64 getUptime();
