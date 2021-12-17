@@ -36,6 +36,13 @@ include_directories(glm/glm)
 #glm linkages
 target_link_libraries(Crafter glm ${GLM_LIBRARIES})
 
+#glad directory management
+add_subdirectory(glad)
+include_directories(glad/include)
+include_directories(glad/src)
+
+#glad linkages
+target_link_libraries(Crafter glad ${GLAD_LIBRARIES})
 
 #manual inclusion of OpenGL
 find_package(OpenGL REQUIRED)
@@ -43,6 +50,7 @@ find_package(OpenGL REQUIRED)
 #manual OpenGL linkage
 target_link_libraries(Crafter OpenGL::GL)
 
+#set opengl to a new version
 set(OpenGL_GL_PREFERENCE GLVND)
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
