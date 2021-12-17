@@ -9,15 +9,21 @@
 
 int main(void)
 {
+    //window pointer
     GLFWwindow* window;
 
     /* Initialize the library */
     if (!glfwInit()){
         log("GLFW COULD NOT INITIALIZE!");
         return -1;
-    }    
+    }
 
-    /* Create a windowed mode window and its OpenGL context */
+    //using opengl 4.4
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 4);
+
+    //Create a windowed mode window and its OpenGL context
+    //automatically redirecting window pointer to new memory location
     window = glfwCreateWindow(640, 480, "Crafter?", NULL, NULL);
 
     //This is debug, basically sending the window pointer to null and crashing glfw.
@@ -25,6 +31,7 @@ int main(void)
     //graphics hardware on individual operating systems.
     //window = NULL;
 
+    //log crash
     if (!window) {
         glfwTerminate();
         logHeader("GLFW ERROR");
@@ -50,7 +57,6 @@ int main(void)
     while (!glfwWindowShouldClose(window)) {
 
         glClearColor(0.3,0.3,0.3,1);
-
 
         //this is to be used as program delta time in the future
         //it is a float -> assumed to be 64 bit
