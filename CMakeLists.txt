@@ -13,7 +13,7 @@ src/debug/log.cpp
 src/mesh.cpp
 src/chunk.cpp
 src/deltaTime.cpp
-
+src/shaderCode/shaderCode.cpp
 )
 #end manual additions
 
