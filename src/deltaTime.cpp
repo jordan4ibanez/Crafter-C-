@@ -18,7 +18,7 @@ void tickDelta(){
     //this is to be used as program delta time in the future
     //it is a float -> assumed to be 64 bit but platform dependant, see https://www.glfw.org/docs/3.0/group__time.html
     deltaTime = glfwGetTime();
-    //debug terminal logging
+    //debug terminal logging - make sure you uncomment the debug/log.h inclusion
     //log(std::to_string(deltaTime));
     //tick up the uptime, in case this is needed for some reason
     upTime += deltaTime;

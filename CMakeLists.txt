@@ -17,6 +17,9 @@ src/deltaTime.cpp
 )
 #end manual additions
 
+#set opengl to a new version
+set(OpenGL_GL_PREFERENCE GLVND)
+
 #manual inclusion of /source/
 include_directories(${CMAKE_SOURCE_DIR})
 
@@ -50,9 +53,6 @@ find_package(OpenGL REQUIRED)
 
 #manual OpenGL linkage
 target_link_libraries(Crafter OpenGL::GL)
-
-#set opengl to a new version
-set(OpenGL_GL_PREFERENCE GLVND)
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
