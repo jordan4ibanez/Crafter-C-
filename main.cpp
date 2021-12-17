@@ -52,8 +52,14 @@ int main(void)
         glClearColor(0.3,0.3,0.3,1);
 
 
+        //this is to be used as program delta time in the future
+        //it is a float -> assumed to be 64 bit
         log(std::to_string(glfwGetTime()));
+        //this resets the timer to maintain float accuracy
+        //!!make sure to add this to a 64 or 128 bit float to get total uptime!!
         glfwSetTime(0);
+        //end delta time
+
         //testMyChunk();
         //do not enable this if you are epileptic
         //glm::vec3 color = myDebugTest();
