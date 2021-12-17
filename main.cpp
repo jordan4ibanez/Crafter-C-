@@ -31,8 +31,14 @@ int main(void)
 
     /* Make the window's context current */
     glfwMakeContextCurrent(window);
-
+    //load gl into glad
     gladLoadGL(glfwGetProcAddress);
+
+    //0 MAX SPEED!
+    //1 regular vsync
+    //2 double buffered
+    //3 triple buffered <- great on low end systems maybe?
+    glfwSwapInterval(1);
 
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window)) {
