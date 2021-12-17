@@ -13,7 +13,7 @@ int main(void)
 
     /* Initialize the library */
     if (!glfwInit()){
-        log("glfw COULD NOT INITIALIZE!");
+        log("GLFW COULD NOT INITIALIZE!");
         return -1;
     }    
 
