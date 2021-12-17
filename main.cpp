@@ -39,6 +39,9 @@ int main(void)
 
         glClearColor(0.3,0.3,0.3,1);
 
+
+        log(std::to_string(glfwGetTime()));
+        glfwSetTime(0);
         //testMyChunk();
         //do not enable this if you are epileptic
         //glm::vec3 color = myDebugTest();
