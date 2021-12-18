@@ -1,3 +1,4 @@
+#define GLFW_INCLUDE_NONE
 #include "chunk.h"
 #include <iostream>
 #include <array>
