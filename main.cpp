@@ -35,10 +35,7 @@ int main(void)
     //log crash
     if (!window) {
         glfwTerminate();
-        logHeader("GLFW ERROR");
-        log("GL WINDOW WAS NOT ABLE TO BE CREATED!");
-        log("EXIT REASON:" + std::to_string(EXIT_FAILURE));
-        logFooter();
+        logAuto("GLFW ERROR", "GL WINDOW WAS NOT ABLE TO BE CREATED!");
         glfwTerminate();
         exit(EXIT_FAILURE);
         return(EXIT_FAILURE);

@@ -16,3 +16,9 @@ void log(std::string input){
 void logFooter(){
     std::cout << "-----------end-----------" << std::endl;
 }
+
+void logAuto(std::string header, std::string input){
+    logHeader(header);
+    log(input);
+    logFooter();
+}
