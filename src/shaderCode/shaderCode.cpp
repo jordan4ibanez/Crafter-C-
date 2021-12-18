@@ -37,4 +37,19 @@ void compileShaders(){
     fragment_shader = glCreateShader(GL_FRAGMENT_SHADER);
     glShaderSource(fragment_shader, 1, &fragment_shader_text, NULL);
     glCompileShader(fragment_shader);
+
+
+    //WARNING: this should probably be in it's own file or something :T
+
+    program = glCreateProgram();
+    glAttachShader(program, vertex_shader);
+    glAttachShader(program, fragment_shader);
+    glLinkProgram(program);
+}
+
+//this is a generic way to get the program ID
+//this should probably not be executed like this
+//still learning and figuring it out though
+GLuint getProgram(){
+    return(program);
 }

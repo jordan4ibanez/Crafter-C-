@@ -73,6 +73,9 @@ int main(void)
         /* Render here */
         glClear(GL_COLOR_BUFFER_BIT);
 
+
+        glUseProgram(getProgram());
+
         /* Swap front and back buffers */
         glfwSwapBuffers(window);
 
