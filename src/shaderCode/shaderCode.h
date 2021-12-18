@@ -6,4 +6,4 @@ static const char* getFragmentShader();
 
 void compileShaders();
 
-GLuint getProgram();
+GLuint getShaderProgram();

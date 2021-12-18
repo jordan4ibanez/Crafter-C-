@@ -51,6 +51,6 @@ void compileShaders(){
 //this is a generic way to get the program ID
 //this should probably not be executed like this
 //still learning and figuring it out though
-GLuint getProgram(){
+GLuint getShaderProgram(){
     return(program);
 }

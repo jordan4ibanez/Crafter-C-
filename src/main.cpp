@@ -11,20 +11,42 @@
 #include "src/debug/glfwErrorCallback.h"
 #include "src/userInput/keyBoard.h"
 
+//a triangle
+//this is all one structure - somehow
+//why is it even written like this?
+static const struct {
+    float x, y;
+    float r, g, b;
+} 
+
+vertices[3] = {
+    { -0.6f, -0.4f, 1.f, 0.f, 0.f },
+    {  0.6f, -0.4f, 0.f, 1.f, 0.f },
+    {   0.f,  0.6f, 0.f, 0.f, 1.f }
+};
+//end structure
+
+
+
 int main(void)
 {
     //window pointer
     GLFWwindow* window;
 
+    //data for the openGL buffer
+    GLint mvp_location, vpos_location, vcol_location;
+
     glfwSetErrorCallback(error_callback);
 
-    /* Initialize the library */
+    //Initialize the library
     if (!glfwInit()){
         logAuto("GLFW ERROR","GLFW COULD NOT INITIALIZE!");
         return -1;
     }
 
-    //using opengl 4.4
+    //using opengl 4.4 - released: Jul 22, 2013
+    //this could be rolled back possibly - not sure yet
+    //has a few important performance optimizations, glforward could be swapped in?
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 4);
 
@@ -83,7 +105,7 @@ int main(void)
         glClear(GL_COLOR_BUFFER_BIT);
 
 
-        glUseProgram(getProgram());
+        glUseProgram(getShaderProgram());
 
         /* Swap front and back buffers */
         glfwSwapBuffers(window);
