@@ -1,3 +1,4 @@
+#define GLFW_INCLUDE_NONE
 #include <iostream>
 #include <random>
 #include "debug/log.h"
