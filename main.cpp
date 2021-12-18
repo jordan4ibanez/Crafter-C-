@@ -25,7 +25,7 @@ int main(void)
 
     //Create a windowed mode window and its OpenGL context
     //automatically redirecting window pointer to new memory location
-    window = glfwCreateWindow(640, 480, "Crafter?", NULL, NULL);
+    window = glfwCreateWindow(640, 480, "Crafter C++ - Prototyping Engine Build", NULL, NULL);
 
     //This is debug, basically sending the window pointer to null and crashing glfw.
     //This is implemented to test the crashing on non-supported (outdated)
