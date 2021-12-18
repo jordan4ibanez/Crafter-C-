@@ -42,6 +42,7 @@ void compileShaders(){
 
     //WARNING: this should probably be in it's own file or something :T
 
+    //create the OpenGL shader program
     program = glCreateProgram();
     glAttachShader(program, vertex_shader);
     glAttachShader(program, fragment_shader);
