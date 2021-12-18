@@ -2,9 +2,9 @@
 #include <glad/gl.h>
 #include <GLFW/glfw3.h>
 #include <string>
-#include <fstream>
 #include "shaderCode.h"
 #include "../debug/log.h"
+#include "../explicitIO/explicitIO.h"
 
 /*
 TODO:
@@ -17,17 +17,7 @@ GLuint vertex_buffer, vertex_shader, fragment_shader, program;
 
 
 //yeah this is just copied from the glfw tutorial
-static const char* vertex_shader_text =
-"#version 110\n"
-"uniform mat4 MVP;\n"
-"attribute vec3 vCol;\n"
-"attribute vec2 vPos;\n"
-"varying vec3 color;\n"
-"void main()\n"
-"{\n"
-"    gl_Position = MVP * vec4(vPos, 0.0, 1.0);\n"
-"    color = vCol;\n"
-"}\n";
+static const char* vertex_shader_text = importShader("src/shaderCode/vertex.vs");
  
 static const char* fragment_shader_text =
 "#version 110\n"
@@ -49,25 +39,7 @@ static const char* getFragmentShader(){
 //this turns that raw text string into actual code :)
 void compileShaders(){
 
-    std::fstream newfile;
-    newfile.open("src/shaderCode/vertex.vs",std::ios::in);
-
-    std::string realOutput;
-    std::string readOutput;
-
-    if (newfile.is_open()){
-        while(std::getline(newfile, readOutput)){ //read data from file object and put it into string.
-            //std::cout << test << "\n"; //print the data of the string
-            realOutput += readOutput + "\n";
-        }
-        newfile.close();
-    }
-
-    //log("hi there");
-
-    std::cout << realOutput << std::endl;
-
-    logFooter();
+    //importShader("src/shaderCode/vertex.vs");
 
     //first we make the vertex shader come alive
     vertex_shader = glCreateShader(GL_VERTEX_SHADER);
