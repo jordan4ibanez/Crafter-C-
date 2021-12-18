@@ -1,3 +1,4 @@
+#define GLFW_INCLUDE_NONE
 #include <iostream>
 #include <glad/gl.h>
 #include <GLFW/glfw3.h>
@@ -7,11 +8,14 @@
 #include "src/chunk.h"
 #include "src/deltaTime.h"
 #include "src/shaderCode/shaderCode.h"
+#include "src/debug/glfwErrorCallback.h"
 
 int main(void)
 {
     //window pointer
     GLFWwindow* window;
+
+    glfwSetErrorCallback(error_callback);
 
     /* Initialize the library */
     if (!glfwInit()){
