@@ -65,6 +65,10 @@ int main(void)
 
         glClearColor(0.3,0.3,0.3,1);
 
+        //int w = 54555;
+        //mutableTest(w);
+        //log(std::to_string(w));
+
         //testMyChunk();
         //do not enable this if you are epileptic
         //glm::vec3 color = myDebugTest();

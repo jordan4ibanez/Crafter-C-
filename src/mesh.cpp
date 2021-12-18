@@ -27,6 +27,11 @@ glm::vec3 myDebugTest(){
     return(test);
 }
 
+//a very small test
+void mutableTest(int &i){
+    i = 5;
+}
+
 _Float32 getColor(){
     return(color);
 }

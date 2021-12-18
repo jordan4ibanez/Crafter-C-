@@ -6,3 +6,5 @@
  glm::vec3 myDebugTest();
 
 _Float32 getColor();
+
+void mutableTest(int &i);
