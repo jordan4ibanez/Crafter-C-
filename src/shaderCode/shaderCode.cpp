@@ -6,13 +6,6 @@
 #include "../debug/log.h"
 #include "../explicitIO/explicitIO.h"
 
-/*
-TODO:
-
-Make this load from a .txt or .v or .c literally anything but hardcoded strings
-
-*/
-
 GLuint vertex_buffer, vertex_shader, fragment_shader, program;
 
 
