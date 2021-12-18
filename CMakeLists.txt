@@ -10,6 +10,7 @@ main.cpp #main
 
 #everything here on out is manual additions
 src/debug/log.cpp
+src/debug/glfwErrorCallback.cpp
 src/mesh.cpp
 src/chunk.cpp
 src/deltaTime.cpp
