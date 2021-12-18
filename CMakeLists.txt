@@ -16,6 +16,7 @@ src/chunk.cpp
 src/deltaTime.cpp
 src/shaderCode/shaderCode.cpp
 src/explicitIO/explicitIO.cpp
+src/userInput/keyBoard.cpp
 )
 #end manual additions
 

@@ -9,6 +9,7 @@
 #include "src/deltaTime.h"
 #include "src/shaderCode/shaderCode.h"
 #include "src/debug/glfwErrorCallback.h"
+#include "src/userInput/keyBoard.h"
 
 int main(void)
 {
@@ -29,7 +30,7 @@ int main(void)
 
     //Create a windowed mode window and its OpenGL context
     //automatically redirecting window pointer to new memory location
-    window = glfwCreateWindow(640, 480, "Crafter C++ - Prototyping Engine Build", NULL, NULL);
+    window = glfwCreateWindow(640, 480, "Crafter C++ - Prototyping Engine Build (0.0.0-DEV)", NULL, NULL);
 
     //This is debug, basically sending the window pointer to null and crashing glfw.
     //This is implemented to test the crashing on non-supported (outdated)
@@ -45,7 +46,10 @@ int main(void)
         return(EXIT_FAILURE);
     }
 
-    /* Make the window's context current */
+    //set the key callback function
+    glfwSetKeyCallback(window, key_callback);
+
+    //Make the window's context current
     glfwMakeContextCurrent(window);
     //load gl into glad
     gladLoadGL(glfwGetProcAddress);
