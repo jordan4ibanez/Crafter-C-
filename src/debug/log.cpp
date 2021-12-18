@@ -17,6 +17,7 @@ void logFooter(){
     std::cout << "-----------end-----------" << std::endl;
 }
 
+//first variable is the header, followed by the body. The log footer is automatically generated
 void logAuto(std::string header, std::string input){
     logHeader(header);
     log(input);
