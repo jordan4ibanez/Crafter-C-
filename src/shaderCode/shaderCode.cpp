@@ -19,13 +19,7 @@ GLuint vertex_buffer, vertex_shader, fragment_shader, program;
 //yeah this is just copied from the glfw tutorial
 static const char* vertex_shader_text = importShader("src/shaderCode/vertex.vs");
  
-static const char* fragment_shader_text =
-"#version 110\n"
-"varying vec3 color;\n"
-"void main()\n"
-"{\n"
-"    gl_FragColor = vec4(color, 1.0);\n"
-"}\n";
+static const char* fragment_shader_text = importShader("src/shaderCode/fragment.fs");
 
 
 static const char* getVertexShader(){
