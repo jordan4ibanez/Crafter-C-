@@ -4,4 +4,4 @@
 #include <string>
 
 
-char* importShader(std::string fileDirectory);
+const char* importShader(std::string fileDirectory);
