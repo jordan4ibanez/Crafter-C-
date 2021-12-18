@@ -83,6 +83,11 @@ int main(void)
         glfwPollEvents();
     }
 
+    glfwDestroyWindow(window);
+
     glfwTerminate();
+
+    exit(EXIT_SUCCESS);
+    
     return 0;
 }
