@@ -7,3 +7,7 @@ static const char* getFragmentShader();
 void compileShaders();
 
 GLuint getShaderProgram();
+
+GLuint getVertexBuffer();
+
+GLuint* getVertexBufferPointer();
