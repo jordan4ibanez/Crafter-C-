@@ -15,7 +15,7 @@ int main(void)
 
     /* Initialize the library */
     if (!glfwInit()){
-        log("GLFW COULD NOT INITIALIZE!");
+        logAuto("GLFW ERROR","GLFW COULD NOT INITIALIZE!");
         return -1;
     }
 
