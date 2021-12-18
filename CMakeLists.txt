@@ -14,6 +14,7 @@ src/mesh.cpp
 src/chunk.cpp
 src/deltaTime.cpp
 src/shaderCode/shaderCode.cpp
+src/explicitIO/explicitIO.cpp
 )
 #end manual additions
 
