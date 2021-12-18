@@ -6,7 +6,7 @@ enable_testing()
 
 #manual adding of cpp files to linkage
 add_executable(Crafter 
-main.cpp #main
+src/main.cpp #main
 
 #everything here on out is manual additions
 src/debug/log.cpp
