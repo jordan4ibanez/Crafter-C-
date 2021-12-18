@@ -1,8 +1,10 @@
 #include <iostream>
-#include <string>
 #include <glad/gl.h>
 #include <GLFW/glfw3.h>
+#include <string>
+#include <fstream>
 #include "shaderCode.h"
+#include "../debug/log.h"
 
 /*
 TODO:
@@ -44,8 +46,29 @@ static const char* getFragmentShader(){
     return(fragment_shader_text);
 }
 
-//this turns that raw text into actual code :)
+//this turns that raw text string into actual code :)
 void compileShaders(){
+
+    std::fstream newfile;
+    newfile.open("src/shaderCode/vertex.vs",std::ios::in);
+
+    std::string realOutput;
+    std::string readOutput;
+
+    if (newfile.is_open()){
+        while(std::getline(newfile, readOutput)){ //read data from file object and put it into string.
+            //std::cout << test << "\n"; //print the data of the string
+            realOutput += readOutput + "\n";
+        }
+        newfile.close();
+    }
+
+    //log("hi there");
+
+    std::cout << realOutput << std::endl;
+
+    logFooter();
+
     //first we make the vertex shader come alive
     vertex_shader = glCreateShader(GL_VERTEX_SHADER);
     glShaderSource(vertex_shader, 1, &vertex_shader_text, NULL);
