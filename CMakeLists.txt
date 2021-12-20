@@ -12,6 +12,7 @@ src/main.cpp #main
 src/debug/log.cpp
 src/debug/glfwErrorCallback.cpp
 src/mesh.cpp
+src/texture.cpp
 src/chunk.cpp
 src/deltaTime.cpp
 src/shaderCode/shaderCode.cpp
