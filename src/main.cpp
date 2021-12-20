@@ -45,6 +45,10 @@ int main(void)
         return -1;
     }
 
+    Mesh test = Mesh();
+
+    test.printHi();
+
     //using opengl 4.4 - released: Jul 22, 2013
     //this could be rolled back possibly - not sure yet
     //has a few important performance optimizations, glforward could be swapped in?
