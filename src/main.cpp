@@ -1,6 +1,6 @@
 #define GLFW_INCLUDE_NONE
 #include <iostream>
-#include <glad/gl.h>
+#include "../glad/gl.h"
 #include <GLFW/glfw3.h>
 #include "src/mesh.h"
 #include "src/debug/log.h"
