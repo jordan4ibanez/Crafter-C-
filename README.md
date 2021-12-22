@@ -7,4 +7,4 @@ Trying something new. Like each folder in /src/ is a "package", with the main in
 
 Notes on required Linux Mint 20.2 packages:
 
-    $ gcc cmake build-essential
+    $ gcc cmake build-essential libx11-dev libxrandr-dev libxinerama-dev libxcursor-dev libxi-dev libgl1-mesa-dev libglu1-mesa-dev
