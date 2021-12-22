@@ -91,9 +91,10 @@ int main(void)
     glBindBuffer(GL_ARRAY_BUFFER, getVertexBuffer());
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
-    //build the glsl shaders
+    //build the glsl shaders NUM555
     compileShaders();
 
+    //this needs to be put in the render class
     mvp_location = glGetUniformLocation(getShaderProgram(), "MVP");
     vpos_location = glGetAttribLocation(getShaderProgram(), "vPos");
     vcol_location = glGetAttribLocation(getShaderProgram(), "vCol");
@@ -105,6 +106,8 @@ int main(void)
     glEnableVertexAttribArray(vcol_location);
     glVertexAttribPointer(vcol_location, 3, GL_FLOAT, GL_FALSE,
                           sizeof(vertices[0]), (void*) (sizeof(float) * 2));
+
+    //end render class comment NUM555
 
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window)) {
