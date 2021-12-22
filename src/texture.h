@@ -8,16 +8,19 @@ class Texture{
     private:
 
     //GL data variables
-    const int id;
-    const int width;
-    const int height;
+    int id;
+    int width;
+    int height;
 
-    int createTexture(std::vector<char> buf);
+    //literal OpenGL data creation in memory - return ID
+    int createTexture(const void* buf);
 
     public:
 
-    //constructor
-    Texture(std::string fileName);
+    //constructor - intakes filename
+    Texture(const char * fileName);
+    //constructor - intakes data from other texture
+    //Texture();
 
 
     //destructor - needs to clean up memory
