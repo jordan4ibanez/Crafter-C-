@@ -52,6 +52,12 @@ include_directories(glad/src)
 #glad linkages
 target_link_libraries(Crafter glad ${GLAD_LIBRARIES})
 
+#stb directory management
+add_subdirectory(stb)
+target_link_libraries(Crafter stb ${STB_LIBRARIES})
+
+
+
 #manual inclusion of OpenGL
 find_package(OpenGL REQUIRED)
 
