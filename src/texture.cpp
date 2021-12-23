@@ -39,7 +39,7 @@ int Texture::createTexture(const void* buf){
 
 //file char pointer constructor
 Texture::Texture(const char * fileName){
-    const stbi_uc *  buf;
+    stbi_uc *  buf;
 
     int * w = (int *) malloc(1);
     int * h = (int *) malloc(1);
@@ -63,20 +63,20 @@ Texture::Texture(const char * fileName){
 
     this->id = this->createTexture(buf);
 
+
     //release unused memory
     //check if issues
     free(w);
     free(h);
     free(channels);
-    stbi_image_free(&buf);
-
+    stbi_image_free(buf);
 
     log("remember to check for memory leaks in texture.cpp!");
 };
 
 //overloaded! takes existing stbi uc (unsigned char in C not C++)
 Texture::Texture(const stbi_uc * imageBuffer){
-    const stbi_uc * buf;
+    stbi_uc * buf;
 
     int * w = (int *) malloc(1);
     int * h = (int *) malloc(1);
@@ -100,7 +100,7 @@ Texture::Texture(const stbi_uc * imageBuffer){
     free(w);
     free(h);
     free(channels);
-    stbi_image_free(&buf);
+    stbi_image_free(buf);
 
 
 }
