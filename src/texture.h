@@ -2,6 +2,7 @@
 #include <iostream>
 #include <vector>
 #define STB_IMAGE_IMPLEMENTATION
+#define STB_IMAGE_STATIC
 #include <stb/stb_image.h>
 
 //java Crafter's texture class translated to C++

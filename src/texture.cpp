@@ -49,7 +49,12 @@ Texture::Texture(const char * fileName){
 
     //throw error if nullptr
     if (buf == nullptr){
-        throw ("Image file [" + std::to_string(*fileName)  + "] not loaded: " + stbi_failure_reason());
+        std::string fileNameLiteral = "";
+        for (char c = *fileName; c; c = *++fileName){
+            fileNameLiteral += c;
+        }
+        logCrash("Image file [" + fileNameLiteral  + "] not loaded: " + stbi_failure_reason());
+        return;
     };
 
     //this can cause errors if nullptr, probably should check
@@ -97,4 +102,9 @@ Texture::Texture(const stbi_uc * imageBuffer){
     stbi_image_free(&buf);
 
 
+}
+
+
+Texture::~Texture(){
+    std::cout << "floop" << std::endl;
 }
