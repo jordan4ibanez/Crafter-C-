@@ -5,9 +5,9 @@
 #include <GLFW/glfw3.h>
 #include "../glad/gl.h"
 #include "debug/log.h"
-//#define STB_IMAGE_IMPLEMENTATION
-//#include <stb/stb_image.h>
 #include <cstdint>
+
+//THIS IS PROBABLY RIDDLED WITH ERRORS!
 
 //private texture creation in OpenGL - literal data
 int Texture::createTexture(const void* buf){
