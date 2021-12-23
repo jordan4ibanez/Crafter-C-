@@ -7,18 +7,21 @@
 #include <glm/vec3.hpp>
 #include <tuple>
 #include "mesh.h"
+#include "texture.h"
 
 
 //constructor
 Mesh::Mesh(){
-
+    this->posVboId = 5;
+    this->posVboId = 10;
+    this->colorVboId = 1;
+    this->textureVboId = 5;
+    this->idxVboId = 5;
+    this->texture.cleanUp();
+    this->texture = ("hi");
 }
 
 //destructor - free memory
 Mesh::~Mesh(){
     
-}
-
-void Mesh::printHi(){
-    std::cout << "hi" << std::endl;
 }
