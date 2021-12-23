@@ -55,7 +55,7 @@ Texture::Texture(const char * fileName){
     this->width = *w;
     this->height = *h;
 
-    this->id = createTexture(buf);
+    this->id = this->createTexture(buf);
 
     //release unused memory
     //check if issues
