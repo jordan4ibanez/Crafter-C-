@@ -27,6 +27,12 @@ class Texture{
     //constructor - intakes data from other texture
     Texture(const stbi_uc * imageBuffer);
 
+    int getWidth();
+
+    int getHeight();
+
+    const GLuint * getId();
+
 
     //destructor - needs to clean up memory
     ~Texture();

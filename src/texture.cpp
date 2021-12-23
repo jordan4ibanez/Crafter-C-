@@ -109,6 +109,19 @@ Texture::Texture(const stbi_uc * imageBuffer){
 }
 
 
+int Texture::getWidth(){
+    return(this->width);
+}
+
+int Texture::getHeight(){
+    return(this->height);
+}
+
+const GLuint * Texture::getId(){
+    return(this->id);
+}
+
+
 Texture::~Texture(){
     std::cout << "floop" << std::endl;
 }
