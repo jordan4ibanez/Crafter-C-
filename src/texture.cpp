@@ -5,8 +5,9 @@
 #include <GLFW/glfw3.h>
 #include "../glad/gl.h"
 #include "debug/log.h"
-#define STB_IMAGE_IMPLEMENTATION
-#include <stb/stb_image.h>
+//#define STB_IMAGE_IMPLEMENTATION
+//#include <stb/stb_image.h>
+#include <cstdint>
 
 //private texture creation in OpenGL - literal data
 int Texture::createTexture(const void* buf){
@@ -36,6 +37,7 @@ int Texture::createTexture(const void* buf){
     return(textureId);
 };
 
+//file char pointer constructor
 Texture::Texture(const char * fileName){
     const stbi_uc *  buf;
 
@@ -45,10 +47,9 @@ Texture::Texture(const char * fileName){
 
     buf = stbi_load(fileName, w, h, channels, 4);
 
-    //this probably isn't correct but it's in here
     //throw error if nullptr
     if (buf == nullptr){
-        throw new error_t();
+        throw ("Image file [" + std::to_string(*fileName)  + "] not loaded: " + stbi_failure_reason());
     };
 
     //this can cause errors if nullptr, probably should check
@@ -67,3 +68,33 @@ Texture::Texture(const char * fileName){
 
     log("remember to check for memory leaks in texture.cpp!");
 };
+
+//overloaded! takes existing stbi uc (unsigned char in C not C++)
+Texture::Texture(const stbi_uc * imageBuffer){
+    const stbi_uc * buf;
+
+    int * w = (int *) malloc(1);
+    int * h = (int *) malloc(1);
+    int * channels = (int *) malloc(1);
+
+    //dump everything into a stbi uc buffer
+    buf = stbi_load_from_memory(imageBuffer, sizeof(imageBuffer), w,h, channels, *channels);
+
+    if (buf == nullptr){
+        char failureReason = *stbi_failure_reason();
+        throw ("Image file not loaded: " + failureReason);
+    }
+
+    this->width = *w;
+    this->height = *h;
+    this->id = this->createTexture(buf);
+
+    //release unused memory
+    //check if issues
+    free(w);
+    free(h);
+    free(channels);
+    stbi_image_free(&buf);
+
+
+}

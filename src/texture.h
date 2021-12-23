@@ -1,6 +1,8 @@
 #pragma once
 #include <iostream>
 #include <vector>
+#define STB_IMAGE_IMPLEMENTATION
+#include <stb/stb_image.h>
 
 //java Crafter's texture class translated to C++
 //OOP as can be
@@ -20,11 +22,9 @@ class Texture{
     //constructor - intakes filename
     Texture(const char * fileName);
     //constructor - intakes data from other texture
-    //Texture();
+    Texture(const stbi_uc * imageBuffer);
 
 
     //destructor - needs to clean up memory
     ~Texture();
-
-
 };
