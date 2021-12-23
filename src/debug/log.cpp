@@ -23,3 +23,17 @@ void logAuto(std::string header, std::string input){
     log(input);
     logFooter();
 }
+
+//prints, then throws a generic exception! Use when prototyping only!
+//this is not the proper way of dumping a crash message!
+void logCrash(std::string input){
+    log("\n\n\n");
+    logHeader("A CRASH HAS HAPPENED!");
+    log("\n\nCrash Reason:");
+    log(input);
+    log("\n\n");
+    logFooter();
+    log("A generic exception:");
+    throw std::exception();
+
+}
