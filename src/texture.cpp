@@ -4,8 +4,9 @@
 #include <vector>
 #include <GLFW/glfw3.h>
 #include "../glad/gl.h"
-#include <stb/stb_image.h>
 #include "debug/log.h"
+#define STB_IMAGE_IMPLEMENTATION
+#include <stb/stb_image.h>
 
 //private texture creation in OpenGL - literal data
 int Texture::createTexture(const void* buf){
@@ -55,6 +56,14 @@ Texture::Texture(const char * fileName){
     this->height = *h;
 
     this->id = createTexture(buf);
+
+    //release unused memory
+    //check if issues
+    free(w);
+    free(h);
+    free(channels);
+    stbi_image_free(&buf);
+
 
     log("remember to check for memory leaks in texture.cpp!");
 };

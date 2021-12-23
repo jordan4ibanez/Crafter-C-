@@ -1,5 +1,5 @@
 #include <iostream>
 
 void say_hello(){
-    std::cout << "Hello, from stb!\n";
+    std::cout << "This is here to make it easier to include in cmake! :P\n";
 }
