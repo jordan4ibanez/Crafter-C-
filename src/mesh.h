@@ -3,14 +3,20 @@
 #include <tuple>
 #include <glm/vec3.hpp>
 #include "texture.h"
+#include <vector>
 
 class Mesh{
     private:
 
-    int posVboId;
-    int colorVboId;
-    int textureVboId;
-    int idxVboId;
+    GLuint * vaoId;
+
+
+
+    GLuint * posVboId;
+    GLuint * colorVboId;
+    GLuint * textureVboId;
+    GLuint * idxVboId;
+
     int vertexCount;
 
     Texture texture;
@@ -18,7 +24,9 @@ class Mesh{
     public:
 
     //constructor
-    Mesh();
+    Mesh(std::vector<float> positions, std::vector<float> colors, std::vector<int> indices, std::vector<float> textCoords, Texture texture);
+
+    void render();
 
     //destructor - free memory
     ~Mesh();
