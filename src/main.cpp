@@ -11,6 +11,7 @@
 #include "src/debug/glfwErrorCallback.h"
 #include "src/userInput/keyBoard.h"
 #include <glfw-3.3.6/deps/linmath.h>
+#include "texture.h"
 
 //a triangle
 //this is all one structure - somehow
@@ -45,9 +46,6 @@ int main(void)
         return -1;
     }
 
-    Mesh test = Mesh();
-
-    test.printHi();
 
     //using opengl 4.4 - released: Jul 22, 2013
     //this could be rolled back possibly - not sure yet
@@ -108,6 +106,10 @@ int main(void)
                           sizeof(vertices[0]), (void*) (sizeof(float) * 2));
 
     //end render class comment NUM555
+
+
+    Texture myTexture = Texture("test.png");
+    
 
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window)) {
