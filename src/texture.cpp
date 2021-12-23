@@ -87,7 +87,8 @@ Texture::Texture(const stbi_uc * imageBuffer){
 
     if (buf == nullptr){
         char failureReason = *stbi_failure_reason();
-        throw ("Image file not loaded: " + failureReason);
+
+        logCrash("A texture clone has completely failed!" + failureReason);
     }
 
     this->width = *w;
