@@ -1,4 +1,6 @@
 # Crafter
+Status update: This was a nightmare so I'm not going to finish it, but feel free to use the code
+
 This is Crafter, I'm not sure if I'll finish it. I'm mainly just transitioning from LWJGL to C++ and OpenGL libraries with OpenAL.
 
 I am learning C++ while making this project, if you know C++ and see something you feel the need to tell me is wrong: https://discord.gg/mtXkQRT7Cx
