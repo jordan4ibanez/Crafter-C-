@@ -22,6 +22,8 @@ class Texture{
 
     public:
 
+    //constructor - blank
+    Texture();
     //constructor - intakes filename
     Texture(const char * fileName);
     //constructor - intakes data from other texture

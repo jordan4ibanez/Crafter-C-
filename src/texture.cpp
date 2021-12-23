@@ -39,6 +39,11 @@ const GLuint * Texture::createTexture(const void* buf){
     return(textureIdPointer);
 };
 
+//blank constructor
+Texture::Texture(){
+
+}
+
 //file char pointer constructor
 Texture::Texture(const char * fileName){
     stbi_uc *  buf;
