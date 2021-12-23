@@ -108,8 +108,7 @@ int main(void)
     //end render class comment NUM555
 
 
-    Texture myTexture = Texture("debug.png");
-
+    //Texture myTexture = Texture("debug.png");
 
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window)) {
