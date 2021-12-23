@@ -1,6 +1,8 @@
 #pragma once
+#define GLFW_INCLUDE_NONE
 #include <iostream>
 #include <vector>
+#include "../glad/gl.h"
 #define STB_IMAGE_IMPLEMENTATION
 #define STB_IMAGE_STATIC
 #include <stb/stb_image.h>
@@ -11,12 +13,12 @@ class Texture{
     private:
 
     //GL data variables
-    int id;
+    const GLuint * id;
     int width;
     int height;
 
     //literal OpenGL data creation in memory - return ID
-    int createTexture(const void* buf);
+    const GLuint * createTexture(const void* buf);
 
     public:
 
@@ -28,4 +30,7 @@ class Texture{
 
     //destructor - needs to clean up memory
     ~Texture();
+
+    //clean up GL data
+    void cleanUp();
 };

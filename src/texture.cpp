@@ -10,10 +10,10 @@
 //THIS IS PROBABLY RIDDLED WITH ERRORS!
 
 //private texture creation in OpenGL - literal data
-int Texture::createTexture(const void* buf){
+const GLuint * Texture::createTexture(const void* buf){
     //Create a new OpenGL texture
     GLuint textureId;
-    glGenTextures(1, &textureId);    
+    glGenTextures(1, &textureId);
 
 
     //Bind the texture
@@ -34,7 +34,9 @@ int Texture::createTexture(const void* buf){
     //Generate mipmapping
     //glGenerateMipmap(GL_TEXTURE_2D);
 
-    return(textureId);
+    const GLuint * textureIdPointer = &textureId;
+
+    return(textureIdPointer);
 };
 
 //file char pointer constructor
@@ -63,6 +65,7 @@ Texture::Texture(const char * fileName){
 
     this->id = this->createTexture(buf);
 
+    //std::cout << std::to_string(this->id) << std::endl;
 
     //release unused memory
     //check if issues
@@ -93,7 +96,7 @@ Texture::Texture(const stbi_uc * imageBuffer){
 
     this->width = *w;
     this->height = *h;
-    this->id = this->createTexture(buf);
+    this->id = (GLuint *) this->createTexture(buf);
 
     //release unused memory
     //check if issues
@@ -109,3 +112,7 @@ Texture::Texture(const stbi_uc * imageBuffer){
 Texture::~Texture(){
     std::cout << "floop" << std::endl;
 }
+
+void Texture::cleanUp(){
+    glad_glDeleteTextures(1, this->id);
+};
